@@ -1,5 +1,5 @@
 /**
- * TOP - User Management API
+ * Globum - User Management API
  * Handles User Profiles, Wallet Summaries, Dashboard Aggregation, 
  * and Administrative User Controls.
  */

@@ -1,5 +1,5 @@
 /**
- * TOP - Wallet Module
+ * Globum - Wallet Module
  * Manages real-time balances, financial aggregations, and transaction filtering.
  */
 

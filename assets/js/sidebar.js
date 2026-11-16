@@ -1,5 +1,5 @@
 /**
- * TOP - User sidebar with every user page.
+ * Globum - User sidebar with every user page.
  * Mobile: a menu button in the header opens a slide-in drawer (bottom nav stays).
  * Desktop (>=960px): the sidebar is always visible and replaces the short left rail.
  */
@@ -50,7 +50,7 @@ function build() {
     aside.setAttribute('aria-label', 'Main menu');
     aside.innerHTML = `
         <div class="user-sidebar-head">
-            <a href="dashboard.html" class="user-sidebar-brand"><img src="${logoUrl}" alt="TOP"></a>
+            <a href="dashboard.html" class="user-sidebar-brand"><img src="${logoUrl}" alt="Globum"></a>
             <button type="button" class="icon-btn user-sidebar-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
         </div>
         ${SECTIONS.map(sec => `

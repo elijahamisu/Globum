@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Transaction History | TOP</title>
+    <title>Transaction History | Globum</title>
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/top.css">
     <link rel="stylesheet" href="assets/css/top-app.css">
     <meta name="theme-color" content="#E60000">
-    <meta name="application-name" content="TOP">
+    <meta name="application-name" content="Globum">
     <style>
 .summary-wrapper { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 46%); gap: 12px; overflow-x: auto; padding: 2px 2px 16px; margin-bottom: -8px; scrollbar-width: none; scroll-snap-type: x mandatory; }
         .summary-wrapper::-webkit-scrollbar { display: none; }
@@ -114,7 +114,7 @@
 
     <!-- Bottom Nav (left rail on desktop) -->
     <nav class="bottom-nav">
-        <a href="dashboard.html" class="rail-brand" aria-label="TOP"><img src="assets/img/logo.svg" alt="TOP"></a>
+        <a href="dashboard.html" class="rail-brand" aria-label="Globum"><img src="assets/img/logo.svg" alt="Globum"></a>
         <a href="dashboard.html" class="nav-item">
             <i class="fas fa-th-large"></i>
             <span>Home</span>
@@ -309,7 +309,7 @@
             const doc = new jsPDF();
             
             doc.setFontSize(18);
-            doc.text("TOP - Transaction Statement", 14, 22);
+            doc.text("Globum - Transaction Statement", 14, 22);
             doc.setFontSize(11);
             doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 30);
             

@@ -1,5 +1,5 @@
 -- =====================================================================
--- TOP — Supabase database schema
+-- Globum — Supabase database schema
 -- Project: qeflimxlemgtjldoxtid
 -- Safe to re-run: tables use IF NOT EXISTS, functions CREATE OR REPLACE,
 -- policies are dropped and recreated.
@@ -155,7 +155,7 @@ create table if not exists public.admin_logs (
 
 create table if not exists public.platform_settings (
   id integer primary key default 1 check (id = 1),
-  app_name text default 'TOP',
+  app_name text default 'Globum',
   app_description text,
   app_url text,
   support_email text,
@@ -457,7 +457,7 @@ begin
   end if;
 
   insert into public.notifications (user_id, title, message, type)
-  values (new.id, 'Welcome to TOP!',
+  values (new.id, 'Welcome to Globum!',
     case when v_bonus > 0 then 'Your account is active and ₦' || to_char(v_bonus, 'FM999,999,990') || ' has been credited to your wallet as a welcome bonus.'
          else 'Your account is active.' end, 'welcome');
 
@@ -483,7 +483,7 @@ returns void language plpgsql stable security definer set search_path = public a
 begin
   if exists (select 1 from public.platform_settings where id = 1 and maintenance_mode)
      and not public.is_admin() then
-    raise exception 'TOP is under maintenance. Please try again shortly.';
+    raise exception 'Globum is under maintenance. Please try again shortly.';
   end if;
 end $$;
 revoke execute on function public._assert_not_maintenance() from public, anon;
@@ -986,8 +986,8 @@ begin
   insert into public.notifications (user_id, title, message, type)
   values (p_user_id,
     case when p_make_admin then 'Admin Access Granted' else 'Admin Access Removed' end,
-    case when p_make_admin then 'You now have administrator access to the TOP admin panel.'
-         else 'Your administrator access to the TOP admin panel has been removed.' end,
+    case when p_make_admin then 'You now have administrator access to the Globum admin panel.'
+         else 'Your administrator access to the Globum admin panel has been removed.' end,
     'system');
   return json_build_object('user_id', p_user_id, 'is_admin', p_make_admin);
 end $$;

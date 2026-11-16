@@ -1,5 +1,5 @@
 /**
- * TOP - Central Supabase Configuration
+ * Globum - Central Supabase Configuration
  * This file initializes the shared Supabase client and provides 
  * reusable helper functions for Auth, Storage, and Realtime.
  */
@@ -14,7 +14,7 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || DEFAULT_SUPABA
 
 if (!supabaseUrl || !supabaseAnonKey) {
     console.error(
-        "TOP Error: Supabase credentials are missing. " +
+        "Globum Error: Supabase credentials are missing. " +
         "Please check your .env file and ensure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY are set."
     );
 }

@@ -1,5 +1,5 @@
 /**
- * TOP - Notification Module
+ * Globum - Notification Module
  * Handles real-time alerts, read/unread state management, broadcast messages,
  * and global notification badge synchronization.
  */

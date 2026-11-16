@@ -1,5 +1,5 @@
 /**
- * TOP - Global Utility Library
+ * Globum - Global Utility Library
  * Reusable helper functions for Validation, Formatting, UI, and Security.
  */
 

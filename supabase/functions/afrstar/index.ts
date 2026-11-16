@@ -1,4 +1,4 @@
-// TOP <-> Afrstar actions called from the browser (Bearer = the user's Supabase JWT).
+// Globum <-> Afrstar actions called from the browser (Bearer = the user's Supabase JWT).
 //   user:  { action: 'deposit', amount }                         -> { pay_url }
 //   admin: { action: 'status' }                                  -> configured?, balance, callback urls
 //          { action: 'topup', amount, phone? }                   -> { pay_url }  (funds the gateway, no wallet credit)
@@ -47,8 +47,8 @@ Deno.serve(async (req) => {
       if (cErr) return json(400, { error: cErr.message });
       const phone = String(profile.phone || '').replace(/[^\d]/g, '') || '08000000000';
       const r = await createPayin(config, {
-        orderSn, amount, name: profile.full_name || 'TOP User', email: profile.email || user.email || '', phone,
-        remark: 'TOP wallet deposit', redirectUrl: `${siteUrl(req)}/deposit.html?gateway=${encodeURIComponent(orderSn)}`,
+        orderSn, amount, name: profile.full_name || 'Globum User', email: profile.email || user.email || '', phone,
+        remark: 'Globum wallet deposit', redirectUrl: `${siteUrl(req)}/deposit.html?gateway=${encodeURIComponent(orderSn)}`,
       });
       if (!r.ok || !r.data?.pay_url) {
         const msg = r.ok ? 'Gateway did not return a payment link.' : r.message;
@@ -80,7 +80,7 @@ Deno.serve(async (req) => {
       const orderSn = makeOrderSn(PREFIX.ADMIN_TOPUP);
       const { data: row, error } = await db.from('gateway_admin_transactions').insert([{ kind: 'topup', order_sn: orderSn, amount: Number(money(amount)), status: 'pending', created_by: user.id, gateway_message: 'Creating checkout…' }]).select('id').single();
       if (error) throw error;
-      const r = await createPayin(config, { orderSn, amount, name: profile.full_name || 'TOP Admin', email: profile.email || user.email || '', phone, remark: 'Gateway top-up', redirectUrl: `${siteUrl(req)}/admin/gateway.html?topup=${encodeURIComponent(orderSn)}` });
+      const r = await createPayin(config, { orderSn, amount, name: profile.full_name || 'Globum Admin', email: profile.email || user.email || '', phone, remark: 'Gateway top-up', redirectUrl: `${siteUrl(req)}/admin/gateway.html?topup=${encodeURIComponent(orderSn)}` });
       if (!r.ok || !r.data?.pay_url) {
         const msg = r.ok ? 'Gateway did not return a payment link.' : r.message;
         await db.from('gateway_admin_transactions').update({ status: 'failed', gateway_message: msg, updated_at: new Date().toISOString() }).eq('id', row.id);
@@ -107,7 +107,7 @@ Deno.serve(async (req) => {
       const orderSn = makeOrderSn(PREFIX.ADMIN_PAYOUT);
       const { data: row, error } = await db.from('gateway_admin_transactions').insert([{ kind: 'payout', order_sn: orderSn, amount: Number(money(amount)), balance_before: Number.isFinite(balance) ? balance : null, bank_code: bank.code, bank_name: bank.name, account_number: account, account_name: name, status: 'processing', gateway_message: 'Sending to gateway…', created_by: user.id }]).select('id').single();
       if (error) throw error;
-      const r = await createPayout(config, { orderSn, amount, name, account, bankCode: bank.code, remark: 'TOP admin withdrawal' });
+      const r = await createPayout(config, { orderSn, amount, name, account, bankCode: bank.code, remark: 'Globum admin withdrawal' });
       await db.from('admin_logs').insert([{ admin_id: user.id, admin_name: profile.full_name, action: `Gateway withdrawal ₦${money(amount)} to ${bank.name} ${account}`, target_id: orderSn }]);
       if (r.ok) {
         await db.from('gateway_admin_transactions').update({ platform_osn: r.data.platform_osn || null, gateway_message: `Accepted by gateway (${r.data.status || 'init'})`, updated_at: new Date().toISOString() }).eq('id', row.id);
@@ -130,7 +130,7 @@ Deno.serve(async (req) => {
       const { data: claim, error: cErr } = await db.rpc('gw_claim_withdrawal', { p_id: w.id, p_admin: user.id, p_order_sn: orderSn, p_bank_code: bank.code });
       if (cErr) return json(409, { error: cErr.message });
       const net = Number((claim as any).payout_amount);
-      const r = await createPayout(config, { orderSn, amount: net, name: String(w.account_name).trim(), account, bankCode: bank.code, remark: 'TOP withdrawal' });
+      const r = await createPayout(config, { orderSn, amount: net, name: String(w.account_name).trim(), account, bankCode: bank.code, remark: 'Globum withdrawal' });
       if (r.ok) {
         await db.rpc('gw_set_withdrawal_osn', { p_id: w.id, p_platform_osn: r.data.platform_osn || null, p_message: `Accepted by gateway (${r.data.status || 'init'})` });
         return json(200, { ok: true, status: 'processing', order_sn: orderSn, amount: money(net) });

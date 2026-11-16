@@ -1,5 +1,5 @@
 /**
- * TOP - Administrator Module
+ * Globum - Administrator Module
  * Handles high-privilege operations, financial approvals, platform analytics,
  * real-time monitoring, and system-wide settings management.
  */

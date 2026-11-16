@@ -1,5 +1,5 @@
 /**
- * TOP - Administrator API
+ * Globum - Administrator API
  * Centralized logic for Admin Stats, Approvals, User Management, and Audit Logging.
  */
 

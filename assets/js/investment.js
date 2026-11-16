@@ -1,5 +1,5 @@
 /**
- * TOP - Investment Module
+ * Globum - Investment Module
  * Manages plan selection, investment creation, real-time progress tracking,
  * and automated earnings countdowns.
  */

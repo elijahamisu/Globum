@@ -1,5 +1,5 @@
 /**
- * TOP - Platform Settings API
+ * Globum - Platform Settings API
  * Manages global configurations, maintenance mode, financial limits,
  * and system-wide security policies.
  */
@@ -107,7 +107,7 @@ export const isMaintenanceMode = async () => {
  */
 export const resetPlatformSettings = async () => {
     const defaults = {
-        app_name: "TOP",
+        app_name: "Globum",
         welcome_bonus_amount: 450,
         referral_percent: 20,
         min_withdrawal_amount: 450,

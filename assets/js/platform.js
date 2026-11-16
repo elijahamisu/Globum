@@ -1,5 +1,5 @@
 /**
- * TOP - Platform settings applied on every user page.
+ * Globum - Platform settings applied on every user page.
  * Reads the single platform_settings row (public read) and applies:
  *  - Maintenance Mode (admins bypass)
  *  - Session Timeout (sign out after N idle minutes)
@@ -21,11 +21,11 @@ const settingsPromise = loadSettings().catch(() => ({}));
 window.TOPSettings = settingsPromise;
 
 function applyBranding(s) {
-    if (s.app_name && s.app_name !== 'TOP') {
+    if (s.app_name && s.app_name !== 'Globum') {
         document.title = document.title.replace(/\bTOP\b/g, s.app_name);
         document.querySelectorAll('meta[name="application-name"]').forEach(m => m.setAttribute('content', s.app_name));
         document.querySelectorAll('[data-app-name]').forEach(el => { el.textContent = s.app_name; });
-        document.querySelectorAll('img[alt="TOP"]').forEach(el => { el.alt = s.app_name; });
+        document.querySelectorAll('img[alt="Globum"]').forEach(el => { el.alt = s.app_name; });
     }
     if (s.app_description) {
         document.querySelectorAll('meta[name="description"]').forEach(m => m.setAttribute('content', s.app_description));
@@ -51,7 +51,7 @@ function applyBranding(s) {
 }
 
 function showMaintenance(s) {
-    const name = s.app_name || 'TOP';
+    const name = s.app_name || 'Globum';
     const overlay = document.createElement('div');
     overlay.id = 'maintenanceOverlay';
     overlay.setAttribute('role', 'alert');

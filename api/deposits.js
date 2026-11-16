@@ -1,5 +1,5 @@
 /**
- * TOP - Deposit Management API
+ * Globum - Deposit Management API
  * Handles Kuda Bank deposit requests, validations, administrator approvals,
  * and automated wallet crediting.
  */

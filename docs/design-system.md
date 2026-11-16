@@ -1,4 +1,4 @@
-# TOP design system: "Crimson & Ivory"
+# Globum design system: "Crimson & Ivory"
 
 Premium red and white theme. One stylesheet, `assets/css/top.css`, holds everything. The full class index is the comment at the top of that file. These notes explain how to use it.
 
@@ -6,7 +6,7 @@ Premium red and white theme. One stylesheet, `assets/css/top.css`, holds everyth
 
 | Asset | Use |
 |---|---|
-| `assets/img/logo.svg` | Mark + "TOP" wordmark, for white backgrounds (nav, rail) |
+| `assets/img/logo.svg` | Mark + "Globum" wordmark, for white backgrounds (nav, rail) |
 | `assets/img/logo-white.svg` | The same in white, for red or dark backgrounds (footer, hero cards) |
 | `assets/img/logo-mark.svg` | Mark only (auth card header, app icon spots) |
 | `assets/img/favicon.svg` | Favicon: `<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">` |
@@ -63,7 +63,7 @@ The mark is a red-gradient tile holding a white "T" whose crossbar is an upward 
   </main>
 
   <nav class="bottom-nav">                    <!-- fixed bottom bar on phones; left rail >= 960px -->
-    <a href="dashboard.html" class="rail-brand"><img src="assets/img/logo.svg" alt="TOP"></a>
+    <a href="dashboard.html" class="rail-brand"><img src="assets/img/logo.svg" alt="Globum"></a>
     <a href="dashboard.html" class="nav-item active"><i class="fas fa-th-large"></i><span>Home</span></a>
     <a href="plans.html" class="nav-item"><i class="fas fa-layer-group"></i><span>Plans</span></a>
     <a href="wallet.html" class="nav-item"><i class="fas fa-wallet"></i><span>Wallet</span></a>

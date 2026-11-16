@@ -1,4 +1,4 @@
--- TOP database smoke test. Runs entirely inside one transaction and ROLLs BACK:
+-- Globum database smoke test. Runs entirely inside one transaction and ROLLs BACK:
 -- nothing it creates is kept. Output: one row per check with pass/fail.
 BEGIN;
 

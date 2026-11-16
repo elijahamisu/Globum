@@ -1,5 +1,5 @@
 /**
- * TOP - Dashboard Module
+ * Globum - Dashboard Module
  * Manages real-time data synchronization, financial summaries, 
  * investment tracking, and dashboard analytics.
  */

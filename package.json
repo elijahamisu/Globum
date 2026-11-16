@@ -1,9 +1,9 @@
 {
-  "name": "top",
+  "name": "globum",
   "version": "1.0.0",
   "private": true,
   "description": "Premium Nigerian Naira Investment Platform",
-  "author": "TOP Development Team",
+  "author": "Globum Development Team",
   "license": "MIT",
   "type": "module",
   "engines": {

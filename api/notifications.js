@@ -1,5 +1,5 @@
 /**
- * TOP - Notifications API
+ * Globum - Notifications API
  * Manages user alerts, administrative broadcasts, real-time synchronization,
  * and delivery statistics.
  */

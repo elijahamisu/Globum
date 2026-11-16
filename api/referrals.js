@@ -1,5 +1,5 @@
 /**
- * TOP - Referral Management API
+ * Globum - Referral Management API
  * Handles referral link detection, relationship mapping, 
  * automated reward processing, and leaderboard analytics.
  */

@@ -1,5 +1,5 @@
 /**
- * TOP - Core Application Controller
+ * Globum - Core Application Controller
  * Handles initialization, authentication guarding, global UI components,
  * and shared utility services.
  */
