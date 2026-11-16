@@ -166,7 +166,7 @@ create table if not exists public.platform_settings (
   telegram_channel_link text default 'https://t.me/monvexachannel',
   telegram_group_button text default 'Join Telegram Group',
   telegram_channel_button text default 'Join Telegram Channel',
-  welcome_bonus_amount numeric(14,2) not null default 450,
+  welcome_bonus_amount numeric(14,2) not null default 1000,
   enable_welcome_bonus boolean not null default true,
   referral_percent numeric(6,2) not null default 20,
   enable_referrals boolean not null default true,

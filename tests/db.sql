@@ -35,9 +35,9 @@ BEGIN
   INSERT INTO _r(test, pass, detail) SELECT 'signup: profile created', count(*) = 1, 'referral_by=' || max(referral_by)
     FROM public.profiles WHERE id = b AND email = 'user_test@example.com' AND full_name = 'User Tester' AND referral_by = 'testref' AND is_admin = false;
   SELECT balance INTO v_bal FROM public.wallets WHERE user_id = b;
-  INSERT INTO _r(test, pass, detail) VALUES ('signup: wallet with 450 welcome bonus', v_bal = 450, 'balance=' || coalesce(v_bal::text, 'null'));
+  INSERT INTO _r(test, pass, detail) VALUES ('signup: wallet with 1000 welcome bonus', v_bal = 1000, 'balance=' || coalesce(v_bal::text, 'null'));
   INSERT INTO _r(test, pass, detail) SELECT 'signup: bonus transaction', count(*) = 1, count(*)::text
-    FROM public.transactions WHERE user_id = b AND type = 'bonus' AND amount = 450;
+    FROM public.transactions WHERE user_id = b AND type = 'bonus' AND amount = 1000;
   INSERT INTO _r(test, pass, detail) SELECT 'signup: referrals row (case-insensitive)', count(*) = 1, count(*)::text
     FROM public.referrals WHERE referrer_id = a AND referred_id = b;
   INSERT INTO _r(test, pass, detail) SELECT 'signup: admin email gets is_admin', bool_and(is_admin), null
@@ -156,7 +156,7 @@ BEGIN
   v_j := public.admin_approve_deposit(v_dep);
   SELECT balance INTO v_bal FROM public.wallets WHERE user_id = a;
   INSERT INTO _r(test, pass, detail) VALUES ('admin_approve_deposit: credits user + 20% referral',
-    (v_j->>'balance')::numeric = 4500 AND (v_j->>'referral_commission')::numeric = 200 AND v_bal = 650, v_j::text || ' referrer balance=' || v_bal);
+    (v_j->>'balance')::numeric = 4500 AND (v_j->>'referral_commission')::numeric = 200 AND v_bal = 1200, v_j::text || ' referrer balance=' || v_bal);
 
   v_j := public.admin_approve_withdrawal(v_wd);
   INSERT INTO _r(test, pass, detail) VALUES ('admin_approve_withdrawal: deducts on approval', (v_j->>'balance')::numeric = 3500, v_j::text);

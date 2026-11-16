@@ -108,7 +108,7 @@ export const isMaintenanceMode = async () => {
 export const resetPlatformSettings = async () => {
     const defaults = {
         app_name: "Globum",
-        welcome_bonus_amount: 450,
+        welcome_bonus_amount: 1000,
         referral_percent: 20,
         min_withdrawal_amount: 450,
         min_investment_amount: 5000,
