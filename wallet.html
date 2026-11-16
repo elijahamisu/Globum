@@ -7,12 +7,12 @@
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="assets/css/top.css">
     <link rel="stylesheet" href="assets/css/top-app.css">
-    <meta name="theme-color" content="#E60000">
+    <meta name="theme-color" content="#050807">
     <meta name="application-name" content="Globum">
     <style>
 .split-2 > .grid { align-content: start; }
@@ -42,9 +42,10 @@
             <!-- Wallet Card -->
             <section class="card-hero fade-up">
                 <div class="balance-top">
-                    <p class="balance-label">Total Available Balance</p>
+                    <span class="card-chip" aria-hidden="true"></span>
                     <span class="balance-chip"><i class="fas fa-shield-halved"></i> NGN Wallet</span>
                 </div>
+                <p class="balance-label" style="margin-top:20px;">Total Available Balance</p>
                 <h1 class="balance-amount" id="mainBalance">₦0.00</h1>
                 <div class="hero-actions">
                     <a href="deposit.html" class="hero-action"><span class="ha-icon"><i class="fas fa-plus"></i></span><span>Deposit</span></a>

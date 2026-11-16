@@ -56,13 +56,13 @@ function showMaintenance(s) {
     overlay.id = 'maintenanceOverlay';
     overlay.setAttribute('role', 'alert');
     overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;' +
-        'padding:24px;background:#0b0b0d;color:#fff;text-align:center;font-family:inherit;';
+        'padding:24px;background:radial-gradient(80% 60% at 50% 0%,rgba(22,163,74,.22),#050807 70%);color:#F2F5F3;text-align:center;font-family:inherit;';
     overlay.innerHTML = `
         <div style="max-width:420px">
             <div style="font-size:48px;margin-bottom:12px">&#128295;</div>
             <h2 style="margin:0 0 10px;font-size:24px">${name} is under maintenance</h2>
             <p style="margin:0 0 18px;opacity:.8;line-height:1.5">We're making some improvements. Please check back shortly. Your funds and investments are safe.</p>
-            ${s.telegram_link ? `<a href="${s.telegram_link}" target="_blank" rel="noopener" style="display:inline-block;padding:12px 20px;border-radius:999px;background:#b3001b;color:#fff;text-decoration:none;font-weight:600">Updates on Telegram</a>` : ''}
+            ${s.telegram_link ? `<a href="${s.telegram_link}" target="_blank" rel="noopener" style="display:inline-block;padding:12px 20px;border-radius:999px;background:linear-gradient(135deg,#22B55A,#16A34A 30%,#0B5A30);border:1px solid rgba(134,239,172,.35);color:#fff;text-decoration:none;font-weight:600">Updates on Telegram</a>` : ''}
         </div>`;
     document.body.appendChild(overlay);
     document.documentElement.style.overflow = 'hidden';

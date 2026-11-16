@@ -1,34 +1,34 @@
 /* 
  * Globum - Master Stylesheet
- * Theme: Premium Luxury Dark Blue
+ * Theme: Emerald & Chrome (legacy sheet, superseded by top.css)
  * Approach: Mobile-First, Responsive, Glassmorphism
  */
 
 /* --- CSS Variables --- */
 :root {
     /* Colors */
-    --primary-bg: #060b13;
-    --secondary-bg: #0a0f1a;
-    --sidebar-bg: #0d121f;
-    --card-bg: rgba(31, 41, 55, 0.4);
+    --primary-bg: #050807;
+    --secondary-bg: #0A120D;
+    --sidebar-bg: #0F1A14;
+    --card-bg: rgba(15, 26, 20, 0.4);
     --glass-bg: rgba(255, 255, 255, 0.03);
     
-    --accent-color: #3b82f6; /* Light Blue */
-    --accent-hover: #2563eb;
-    --gold: #f59e0b;
-    --gold-hover: #d97706;
+    --accent-color: #16A34A; /* Emerald */
+    --accent-hover: #0B6B3A;
+    --gold: #C9CED1;
+    --gold-hover: #8B9399;
     
     --text-main: #ffffff;
     --text-muted: #9ca3af;
     --text-dim: #6b7280;
     
     --success: #10b981;
-    --warning: #f59e0b;
+    --warning: #C9CED1;
     --danger: #ef4444;
-    --info: #0ea5e9;
+    --info: #C9CED1;
 
     --glass-border: rgba(255, 255, 255, 0.08);
-    --accent-glow: rgba(59, 130, 246, 0.3);
+    --accent-glow: rgba(74, 222, 128, 0.3);
 
     /* Spacing & Sizing */
     --radius-sm: 8px;
@@ -54,8 +54,8 @@ html {
 body {
     background-color: var(--primary-bg);
     background-image: 
-        radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 0% 0%, rgba(74, 222, 128, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(201, 206, 209, 0.03) 0%, transparent 50%);
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
@@ -126,7 +126,7 @@ section {
 }
 
 .glass-card:hover {
-    border-color: rgba(59, 130, 246, 0.3);
+    border-color: rgba(74, 222, 128, 0.3);
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -161,7 +161,7 @@ section {
 .form-control:focus {
     border-color: var(--accent-color);
     background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1);
 }
 
 .form-control::placeholder {
@@ -216,7 +216,7 @@ section {
 /* --- Navigation --- */
 header {
     height: var(--nav-height);
-    background: rgba(6, 11, 19, 0.8);
+    background: rgba(5, 8, 7, 0.8);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -230,7 +230,7 @@ header {
     left: 0;
     width: 100%;
     height: 70px;
-    background: rgba(13, 18, 31, 0.95);
+    background: rgba(10, 18, 13, 0.95);
     backdrop-filter: blur(15px);
     display: flex;
     justify-content: space-around;
@@ -305,7 +305,7 @@ td {
 }
 
 .badge-success { background: rgba(16, 185, 129, 0.1); color: var(--success); }
-.badge-warning { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+.badge-warning { background: rgba(201, 206, 209, 0.1); color: var(--warning); }
 .badge-danger { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
 
 .progress-bar {
@@ -335,7 +335,7 @@ td {
 }
 
 .toast {
-    background: #111827;
+    background: #0F1A14;
     border: 1px solid var(--glass-border);
     padding: 16px;
     border-radius: var(--radius-md);
@@ -357,7 +357,7 @@ td {
 }
 
 .skeleton {
-    background: linear-gradient(90deg, #1f2937 25%, #374151 50%, #1f2937 75%);
+    background: linear-gradient(90deg, #13221A 25%, #1A2E23 50%, #13221A 75%);
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s infinite;
     border-radius: var(--radius-sm);

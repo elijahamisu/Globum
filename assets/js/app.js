@@ -152,14 +152,14 @@ const showTelegramModal = () => {
     const modal = document.createElement('div');
     modal.className = 'modal-overlay active';
     modal.innerHTML = `
-        <div class="modal-card scale-in" style="max-width: 400px; text-align: center; background: #0a0f1a; padding: 30px; border-radius: 20px; border: 1px solid #3b82f6;">
-            <i class="fab fa-telegram" style="font-size: 50px; color: #229ED9; margin-bottom: 20px;"></i>
+        <div class="modal-card scale-in" style="max-width: 400px; text-align: center; padding: 30px; border-radius: 20px;">
+            <i class="fab fa-telegram" style="font-size: 50px; color: var(--emerald-bright); margin-bottom: 20px; filter: drop-shadow(0 0 14px rgba(74,222,128,.45));"></i>
             <h2 style="margin-bottom: 10px;">Join Our Community!</h2>
-            <p style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Get instant updates, investment tips, and 24/7 support in our official Telegram group.</p>
+            <p style="color: var(--ink-2); font-size: 14px; margin-bottom: 25px;">Get instant updates, investment tips, and 24/7 support in our official Telegram group.</p>
             <div style="display: flex; flex-direction: column; gap: 10px;">
-                <a href="${ENV.TELEGRAM_LINK}" target="_blank" class="btn-prime" style="background:#229ED9; text-decoration:none; display:block; padding:12px; border-radius:10px; font-weight:700;">Join Telegram Group</a>
-                <a href="${ENV.TELEGRAM_CHANNEL_LINK}" target="_blank" class="btn-prime" style="background:transparent; border:1px solid #229ED9; color:#229ED9; text-decoration:none; display:block; padding:12px; border-radius:10px; font-weight:700;">Join Telegram Channel</a>
-                <button id="closeTgPopup" style="background:transparent; border:none; color:#9ca3af; cursor:pointer; font-size:13px;">Maybe Later</button>
+                <a href="${ENV.TELEGRAM_LINK}" target="_blank" class="btn btn-primary btn-block">Join Telegram Group</a>
+                <a href="${ENV.TELEGRAM_CHANNEL_LINK}" target="_blank" class="btn btn-outline btn-block">Join Telegram Channel</a>
+                <button id="closeTgPopup" class="btn btn-ghost btn-sm" style="color:var(--ink-2);">Maybe Later</button>
             </div>
         </div>
     `;
@@ -183,7 +183,7 @@ export const toggleLoader = (show, text = 'Loading...') => {
         loader.innerHTML = `
             <div style="text-align:center">
                 <div class="spinner"></div>
-                <p style="margin-top:15px; color:#9ca3af; font-size:14px;">${text}</p>
+                <p style="margin-top:15px; color:var(--ink-2); font-size:14px;">${text}</p>
             </div>
         `;
         document.body.appendChild(loader);

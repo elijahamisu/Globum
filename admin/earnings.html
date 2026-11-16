@@ -7,13 +7,13 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="../assets/css/top.css">
     <link rel="stylesheet" href="../assets/css/top-admin.css">
-    <meta name="theme-color" content="#E60000">
+    <meta name="theme-color" content="#050807">
     <meta name="application-name" content="Globum">
     <style>
         @media (max-width: 719px) {
@@ -281,16 +281,17 @@
             
             // Logic to group last 7 days...
             if(dailyChart) dailyChart.destroy();
+            if (window.Chart) { Chart.defaults.color = '#A7B1AC'; Chart.defaults.borderColor = 'rgba(201, 206, 209, 0.08)'; }
             dailyChart = new Chart(ctx1, {
                 type: 'bar',
-                data: { labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], datasets: [{ label: 'Earnings', data: [5000, 8000, 12000, 7000, 15000, 20000, 25000], backgroundColor: '#3b82f6' }] },
+                data: { labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], datasets: [{ label: 'Earnings', data: [5000, 8000, 12000, 7000, 15000, 20000, 25000], backgroundColor: '#4ADE80' }] },
                 options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { display: false } } }
             });
 
             if(trendChart) trendChart.destroy();
             trendChart = new Chart(ctx2, {
                 type: 'line',
-                data: { labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'], datasets: [{ label: 'Payout', data: [150000, 220000, 310000, 400000], borderColor: '#10b981', tension: 0.4, fill: true, backgroundColor: 'rgba(16, 185, 129, 0.1)' }] },
+                data: { labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'], datasets: [{ label: 'Payout', data: [150000, 220000, 310000, 400000], borderColor: '#C9CED1', tension: 0.4, fill: true, backgroundColor: 'rgba(201, 206, 209, 0.08)' }] },
                 options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { display: false } } }
             });
         }

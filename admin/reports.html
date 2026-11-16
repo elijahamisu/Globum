@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="../assets/css/top.css">
     <link rel="stylesheet" href="../assets/css/top-admin.css">
-    <meta name="theme-color" content="#E60000">
+    <meta name="theme-color" content="#050807">
     <meta name="application-name" content="Globum">
     <style>
         @media (max-width: 719px) {
@@ -227,16 +227,17 @@
             const ctxG = document.getElementById('growthChart').getContext('2d');
 
             if(financeChart) financeChart.destroy();
+            if (window.Chart) { Chart.defaults.color = '#A7B1AC'; Chart.defaults.borderColor = 'rgba(201, 206, 209, 0.08)'; }
             financeChart = new Chart(ctxF, {
                 type: 'line',
                 data: {
                     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                     datasets: [
-                        { label: 'Deposits', data: [50, 80, 45, 120, 150, 200], borderColor: '#10b981', tension: 0.4 },
-                        { label: 'Withdrawals', data: [20, 40, 30, 70, 90, 110], borderColor: '#ef4444', tension: 0.4 }
+                        { label: 'Deposits', data: [50, 80, 45, 120, 150, 200], borderColor: '#4ADE80', tension: 0.4 },
+                        { label: 'Withdrawals', data: [20, 40, 30, 70, 90, 110], borderColor: '#C9CED1', tension: 0.4 }
                     ]
                 },
-                options: { responsive: true, plugins: { legend: { labels: { color: '#9ca3af' } } } }
+                options: { responsive: true, plugins: { legend: { labels: { color: '#A7B1AC' } } } }
             });
 
             if(growthChart) growthChart.destroy();
@@ -244,7 +245,7 @@
                 type: 'bar',
                 data: {
                     labels: ['W1', 'W2', 'W3', 'W4'],
-                    datasets: [{ label: 'New Users', data: [12, 19, 8, 25], backgroundColor: '#3b82f6' }]
+                    datasets: [{ label: 'New Users', data: [12, 19, 8, 25], backgroundColor: '#4ADE80' }]
                 },
                 options: { responsive: true, plugins: { legend: { display: false } } }
             });

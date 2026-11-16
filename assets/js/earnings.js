@@ -228,13 +228,13 @@ const renderEarningsCharts = () => {
             datasets: [{
                 label: 'Daily Profit',
                 data: dataPoints,
-                borderColor: '#3b82f6',
-                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                borderColor: '#4ADE80',
+                backgroundColor: 'rgba(74, 222, 128, 0.12)',
                 fill: true,
                 tension: 0.4,
                 borderWidth: 3,
                 pointRadius: 4,
-                pointBackgroundColor: '#3b82f6'
+                pointBackgroundColor: '#C9CED1'
             }]
         },
         options: {
@@ -243,7 +243,7 @@ const renderEarningsCharts = () => {
             plugins: { legend: { display: false } },
             scales: {
                 y: { display: false },
-                x: { grid: { display: false }, ticks: { color: '#9ca3af', font: { size: 10 } } }
+                x: { grid: { display: false }, ticks: { color: '#A7B1AC', font: { size: 10 } } }
             }
         }
     });

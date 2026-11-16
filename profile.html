@@ -7,27 +7,27 @@
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="assets/css/top.css">
     <link rel="stylesheet" href="assets/css/top-app.css">
-    <meta name="theme-color" content="#E60000">
+    <meta name="theme-color" content="#050807">
     <meta name="application-name" content="Globum">
     <style>
 .profile-card { display: flex; align-items: center; gap: 20px; }
         .avatar-container { position: relative; flex-shrink: 0; }
-        .profile-img { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 10px 26px rgba(0,0,0,.22); background: #fff; }
-        .edit-avatar-btn { position: absolute; right: -2px; bottom: 2px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #fff; color: var(--red); font-size: 13px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,.2); transition: transform var(--t); }
+        .profile-img { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; border: 3px solid var(--surface); box-shadow: 0 10px 26px rgba(0,0,0,.22); background: var(--surface); }
+        .edit-avatar-btn { position: absolute; right: -2px; bottom: 2px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); color: var(--accent); font-size: 13px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,.2); transition: transform var(--t); }
         .edit-avatar-btn:hover { transform: scale(1.08); }
         .profile-id { min-width: 0; }
         .profile-id h2 { font-size: clamp(22px, 6vw, 30px); line-height: 1.15; overflow-wrap: anywhere; }
         .profile-id p { color: rgba(255,255,255,.8) !important; font-size: 14px; margin: 2px 0 10px; }
         .stats-3 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-        .stats-3 > :first-child { grid-column: 1 / -1; background: var(--red-50); }
+        .stats-3 > :first-child { grid-column: 1 / -1; background: var(--tint); }
         .stats-3 .stat-card { padding: 14px; }
         .stats-3 .stat-icon { width: 32px; height: 32px; font-size: 13px; margin-bottom: 8px; }
-        .btn.btn-logout { color: var(--red-deep); }
+        .btn.btn-logout { color: var(--danger); border-color: rgba(248,113,113,.35); }
     </style>
 </head>
 <body class="app-body">

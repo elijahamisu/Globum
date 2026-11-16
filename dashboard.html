@@ -7,17 +7,17 @@
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="assets/css/top.css">
-    <meta name="theme-color" content="#E60000">
+    <meta name="theme-color" content="#050807">
     <meta name="application-name" content="Globum">
     <style>
         .dash-hero .balance-amount { margin-bottom: 18px; }
         .dash-side { display: grid; gap: 16px; }
         .qa-card { padding: 18px 12px; }
-        .ref-code { font-family: var(--f-display); font-size: 17px; color: var(--ink); letter-spacing: .02em; }
+        .ref-code { font-family: var(--f-num); font-weight: 800; font-size: 16px; color: var(--accent); letter-spacing: .08em; }
     </style>
 </head>
 <body class="app-body">
@@ -49,9 +49,10 @@
             <!-- Wallet Balance Card -->
             <section class="card-hero dash-hero fade-up">
                 <div class="balance-top">
-                    <p class="balance-label">Total Wallet Balance</p>
+                    <span class="card-chip" aria-hidden="true"></span>
                     <span class="balance-chip"><i class="fas fa-shield-halved"></i> NGN Wallet</span>
                 </div>
+                <p class="balance-label" style="margin-top:20px;">Total Wallet Balance</p>
                 <h1 class="balance-amount" id="walletBalance">&#8358;0.00</h1>
                 <div class="balance-split">
                     <div class="split-item">
@@ -343,7 +344,7 @@
                         <h4>${inv.plan_name}</h4>
                         <p>Inv: ₦${parseFloat(inv.amount).toLocaleString()}</p>
                     </div>
-                    <div class="inv-badge" style="${inv.status !== 'active' ? 'background:rgba(156,163,175,0.1); color:#9ca3af;' : ''}">
+                    <div class="inv-badge" style="${inv.status !== 'active' ? 'background:rgba(255,255,255,.05); color:var(--ink-2); border-color:var(--line);' : ''}">
                         ${inv.status.toUpperCase()}
                     </div>
                 `;

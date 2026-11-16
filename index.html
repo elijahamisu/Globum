@@ -8,24 +8,33 @@
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/top.css">
-    <meta name="theme-color" content="#E60000">
+    <meta name="theme-color" content="#050807">
     <meta name="application-name" content="Globum">
     <style>
-        .hero-wrap { position: relative; overflow: hidden; padding: 36px 0 56px; background: radial-gradient(90% 70% at 85% 0%, #FFE9E9 0%, rgba(255,245,245,0) 60%), #fff; }
-        .hero-grid { display: grid; gap: 36px; align-items: center; }
+        .hero-wrap { position: relative; overflow: hidden; padding: 36px 0 64px; }
+        .hero-wrap::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 55% at 78% 30%, rgba(22,163,74,.22) 0%, rgba(5,8,7,0) 70%), var(--globe-lines) right -300px top -200px / 900px 900px no-repeat; opacity: .45; }
+        .hero-wrap::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, rgba(201,206,209,0), rgba(201,206,209,.35), rgba(74,222,128,.45), rgba(201,206,209,0)); }
+        .hero-grid { position: relative; display: grid; gap: 40px; align-items: center; }
         .hero-copy .lead { margin: 18px 0 28px; max-width: 520px; }
         .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; }
-        .hero-btns .btn { flex: 1 1 160px; }
+        .hero-btns .btn { flex: 1 1 100%; }
+        @media (min-width: 480px) { .hero-btns .btn { flex: 1 1 180px; } }
         .hero-trust { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 26px; font-size: 13px; color: var(--ink-2); }
-        .hero-trust i { color: var(--red); margin-right: 6px; }
-        .flyer { max-width: 440px; width: 100%; justify-self: center; }
-        .flyer .big { font: 700 clamp(44px, 13vw, 64px)/1 var(--f-display); margin: 10px 0 4px; }
+        .hero-trust i { color: var(--accent); margin-right: 6px; }
+        .hero-visual { position: relative; display: grid; justify-items: center; padding-top: 170px; }
+        .hero-orb { position: absolute; top: 0; left: 50%; width: 230px; height: 230px; transform: translateX(-50%); border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 1px rgba(201,206,209,.25), 0 0 80px rgba(74,222,128,.35), 0 0 160px rgba(22,163,74,.25); animation: orb-float 7s ease-in-out infinite; }
+        .hero-orb img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); }
+        .hero-orb::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(5,8,7,0) 55%, rgba(5,8,7,.55) 100%); }
+        @keyframes orb-float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-8px); } }
+        .flyer { position: relative; z-index: 2; max-width: 440px; width: 100%; backdrop-filter: blur(4px); }
+        .flyer .badge-white i { color: #FCD34D; }
+        .flyer .big { font: 800 clamp(48px, 14vw, 68px)/1 var(--f-num); letter-spacing: -.03em; margin: 10px 0 6px; background: var(--grad-chrome); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
         .flyer-rows { display: grid; gap: 10px; margin-top: 22px; }
-        .flyer-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); font-size: 13.5px; }
-        .flyer-row b { font-size: 15px; }
+        .flyer-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 14px; background: rgba(5,8,7,.35); border: 1px solid rgba(201,206,209,.16); font-size: 13.5px; color: var(--chrome-2); }
+        .flyer-row b { font: 800 15px/1 var(--f-num); color: var(--emerald-bright); }
         .section-title { text-align: center; max-width: 620px; margin: 0 auto 32px; }
         .section-title .eyebrow { justify-content: center; }
         .section-title h2 { font-size: clamp(28px, 6vw, 40px); margin: 10px 0 10px; }
@@ -35,8 +44,11 @@
         .steps-grid .step-no { margin: 0; flex-shrink: 0; }
         @media (min-width: 640px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 960px) {
-            .hero-wrap { padding: 72px 0 96px; }
-            .hero-grid { grid-template-columns: 1.15fr .85fr; gap: 56px; }
+            .hero-wrap { padding: 88px 0 112px; }
+            .hero-grid { grid-template-columns: 1.1fr .9fr; gap: 56px; }
+            .hero-visual { padding: 0 0 0 40px; justify-items: start; }
+            .hero-orb { left: auto; right: -70px; top: -70px; width: 360px; height: 360px; transform: none; animation-name: orb-float-d; }
+            @keyframes orb-float-d { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
             .hero-btns .btn { flex: 0 0 auto; }
             .steps-grid { grid-template-columns: repeat(5, 1fr); }
             .steps-grid .step-card { display: block; }
@@ -79,7 +91,7 @@
     <section class="hero-wrap">
         <div class="container hero-grid">
             <div class="hero-copy fade-up">
-                <span class="eyebrow">Premium Naira Investment</span>
+                <span class="eyebrow">Private-grade Naira investing</span>
                 <h1 class="display" style="margin-top:14px;">Invest Smarter <br>with <em>Globum</em></h1>
                 <p class="lead">The most reliable and premium Naira investment platform. Earn daily profits and grow your wealth with ease.</p>
                 <div class="hero-btns">
@@ -92,18 +104,21 @@
                     <span><i class="fas fa-gift"></i>&#8358;450 welcome bonus</span>
                 </div>
             </div>
-            <div class="card-hero flyer fade-up d2">
-                <div class="row-between">
-                    <span class="badge badge-white"><i class="fas fa-crown"></i> Executive Plan</span>
-                    <img src="assets/img/logo-mark.svg" alt="" style="width:40px;height:40px;border-radius:12px;box-shadow:0 0 0 1px rgba(255,255,255,.35);">
-                </div>
-                <p class="balance-label" style="margin-top:22px;">Daily profit up to</p>
-                <div class="big">12%</div>
-                <p class="muted" style="font-size:14px;">Credited to your wallet every day at 12:00 AM (Lagos).</p>
-                <div class="flyer-rows">
-                    <div class="flyer-row"><span>Starter Plan</span><b>5% daily</b></div>
-                    <div class="flyer-row"><span>Professional Plan</span><b>8% daily</b></div>
-                    <div class="flyer-row"><span>Executive Plan</span><b>12% daily</b></div>
+            <div class="hero-visual fade-up d2">
+                <div class="hero-orb" aria-hidden="true"><img src="assets/img/globum-logo.jpg" alt=""></div>
+                <div class="card-hero flyer">
+                    <div class="row-between">
+                        <span class="badge badge-white"><i class="fas fa-crown"></i> Executive Plan</span>
+                        <span class="card-chip" aria-hidden="true"></span>
+                    </div>
+                    <p class="balance-label" style="margin-top:26px;">Daily profit up to</p>
+                    <div class="big">12%</div>
+                    <p class="muted" style="font-size:14px;">Credited to your wallet every day at 12:00 AM (Lagos).</p>
+                    <div class="flyer-rows">
+                        <div class="flyer-row"><span>Starter Plan</span><b>5% daily</b></div>
+                        <div class="flyer-row"><span>Professional Plan</span><b>8% daily</b></div>
+                        <div class="flyer-row"><span>Executive Plan</span><b>12% daily</b></div>
+                    </div>
                 </div>
             </div>
         </div>

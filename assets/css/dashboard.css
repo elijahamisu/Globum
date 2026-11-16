@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(6, 11, 19, 0.5);
+    background: rgba(5, 8, 7, 0.5);
     backdrop-filter: blur(10px);
 }
 
@@ -29,7 +29,7 @@
 
 /* --- Premium Dashboard Cards --- */
 .main-balance-card {
-    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+    background: linear-gradient(135deg, #0B3B22 0%, #0A120D 100%);
     border: 1px solid var(--accent-color);
     padding: 30px 24px;
     border-radius: var(--radius-lg);
@@ -125,7 +125,7 @@
     background: var(--accent-color);
     color: white;
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 20px rgba(74, 222, 128, 0.3);
 }
 
 /* --- Statistics Widgets --- */
@@ -187,7 +187,7 @@
 }
 
 .countdown-box {
-    background: rgba(245, 158, 11, 0.1);
+    background: rgba(201, 206, 209, 0.1);
     color: var(--warning);
     padding: 10px 15px;
     border-radius: var(--radius-sm);
