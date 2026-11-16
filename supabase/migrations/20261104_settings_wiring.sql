@@ -4,7 +4,7 @@ returns void language plpgsql stable security definer set search_path = public a
 begin
   if exists (select 1 from public.platform_settings where id = 1 and maintenance_mode)
      and not public.is_admin() then
-    raise exception 'TOP is under maintenance. Please try again shortly.';
+    raise exception 'Globum is under maintenance. Please try again shortly.';
   end if;
 end $$;
 revoke execute on function public._assert_not_maintenance() from public, anon;

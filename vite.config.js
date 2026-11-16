@@ -2,8 +2,8 @@ import { defineConfig, loadEnv } from 'vite';
 import { resolve } from 'path';
 
 // Public Supabase defaults for the Globum project. The anon key is public by design (RLS protects data).
-const DEFAULT_SUPABASE_URL = 'https://qeflimxlemgtjldoxtid.supabase.co';
-const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFlZmxpbXhsZW1ndGpsZG94dGlkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM4MTQyNzIsImV4cCI6MjEwOTM5MDI3Mn0.wj7so8tKwMT6O1yXryfF293sbRj73KIzV1UmAuW3KaU';
+const DEFAULT_SUPABASE_URL = 'https://bghjelecrhjksrwcsxkd.supabase.co';
+const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJnaGplbGVjcmhqa3Nyd2NzeGtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ4MjgwMDEsImV4cCI6MjExMDQwNDAwMX0.byyiYZCYcn4zpelGSgF3YpCM_BjaXuMK-ovOqUo4lyQ';
 
 export default defineConfig(({ mode }) => {
   const env = { ...loadEnv(mode, process.cwd(), 'VITE_'), ...process.env };

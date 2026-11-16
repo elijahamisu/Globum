@@ -16,8 +16,8 @@ begin
   insert into public.notifications (user_id, title, message, type)
   values (p_user_id,
     case when p_make_admin then 'Admin Access Granted' else 'Admin Access Removed' end,
-    case when p_make_admin then 'You now have administrator access to the TOP admin panel.'
-         else 'Your administrator access to the TOP admin panel has been removed.' end,
+    case when p_make_admin then 'You now have administrator access to the Globum admin panel.'
+         else 'Your administrator access to the Globum admin panel has been removed.' end,
     'system');
   return json_build_object('user_id', p_user_id, 'is_admin', p_make_admin);
 end $$;

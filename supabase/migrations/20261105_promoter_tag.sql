@@ -30,9 +30,9 @@ begin
     coalesce(v_name, p_user_id::text));
   insert into public.notifications (user_id, title, message, type)
   values (p_user_id,
-    case when p_is_promoter then 'You are now a TOP Promoter' else 'Promoter Tag Removed' end,
-    case when p_is_promoter then 'Congratulations! Your account has been tagged as an official TOP Promoter.'
-         else 'Your TOP Promoter tag has been removed from your account.' end,
+    case when p_is_promoter then 'You are now a Globum Promoter' else 'Promoter Tag Removed' end,
+    case when p_is_promoter then 'Congratulations! Your account has been tagged as an official Globum Promoter.'
+         else 'Your Globum Promoter tag has been removed from your account.' end,
     'system');
   return json_build_object('user_id', p_user_id, 'is_promoter', p_is_promoter);
 end $$;

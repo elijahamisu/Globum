@@ -5,8 +5,8 @@
  */
 
 // 0. Public defaults for the Globum Supabase project (anon key is public; RLS protects data)
-export const DEFAULT_SUPABASE_URL = 'https://qeflimxlemgtjldoxtid.supabase.co';
-export const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFlZmxpbXhsZW1ndGpsZG94dGlkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM4MTQyNzIsImV4cCI6MjEwOTM5MDI3Mn0.wj7so8tKwMT6O1yXryfF293sbRj73KIzV1UmAuW3KaU';
+export const DEFAULT_SUPABASE_URL = 'https://bghjelecrhjksrwcsxkd.supabase.co';
+export const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJnaGplbGVjcmhqa3Nyd2NzeGtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ4MjgwMDEsImV4cCI6MjExMDQwNDAwMX0.byyiYZCYcn4zpelGSgF3YpCM_BjaXuMK-ovOqUo4lyQ';
 
 // 1. Environment Variable Validation
 const requiredEnvVars = [

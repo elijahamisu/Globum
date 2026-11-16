@@ -1,6 +1,6 @@
 -- =====================================================================
 -- Globum — Supabase database schema
--- Project: qeflimxlemgtjldoxtid
+-- Project: bghjelecrhjksrwcsxkd
 -- Safe to re-run: tables use IF NOT EXISTS, functions CREATE OR REPLACE,
 -- policies are dropped and recreated.
 -- Sections are separated by "-- @@CHUNK" markers (applied one at a time).

@@ -1,4 +1,4 @@
--- Afrstar payment gateway for TOP.
+-- Afrstar payment gateway for Globum.
 --  * platform_settings.deposit_mode: 'manual' (bank transfer + admin approval) or 'gateway' (Afrstar checkout, auto-credit)
 --  * gateway deposits are credited by the verified Afrstar callback, with referral commission (same rule as manual)
 --  * withdrawals always need an admin: Send to gateway (Afrstar payout), Mark as paid (existing approve), Reject
@@ -140,7 +140,7 @@ declare
   v_status text; v_min numeric; v_mode text; v_maint boolean; v_id uuid;
 begin
   select coalesce(min_deposit_amount, 0), deposit_mode, coalesce(maintenance_mode, false) into v_min, v_mode, v_maint from public.platform_settings where id = 1;
-  if v_maint then raise exception 'TOP is under maintenance. Please try again shortly.'; end if;
+  if v_maint then raise exception 'Globum is under maintenance. Please try again shortly.'; end if;
   if v_mode <> 'gateway' then raise exception 'Online payment is not available right now. Please use bank transfer.'; end if;
   select status into v_status from public.profiles where id = p_user;
   if coalesce(v_status, '') <> 'active' then raise exception 'Your account is not active'; end if;
