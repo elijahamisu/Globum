@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="fee-breakdown" id="feeBreakdown">
-                        <div class="fee-row"><span>Withdrawal Charge (<span id="feePctLabel">10</span>%)</span><span id="feeAmountText">₦0.00</span></div>
+                        <div class="fee-row"><span>Withdrawal Charge (<span id="feePctLabel">15</span>%)</span><span id="feeAmountText">₦0.00</span></div>
                         <div class="fee-row fee-row-total"><span>You'll Receive</span><span id="netAmountText">₦0.00</span></div>
                     </div>
 
@@ -210,7 +210,7 @@
         let withdrawalsLocked = false;   // admin has locked all withdrawals platform-wide
         let hasActivePlan = false;       // user has at least one row in `investments` with status = 'active'
 
-        let WITHDRAWAL_FEE_PERCENT = 10;  // overwritten from platform_settings.withdrawal_fee_percent
+        let WITHDRAWAL_FEE_PERCENT = 15;  // overwritten from platform_settings.withdrawal_fee_percent
 
         function updateFeeBreakdown() {
             const amount = parseFloat(document.getElementById('withdrawAmount').value) || 0;
